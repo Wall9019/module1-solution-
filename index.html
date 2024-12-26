@@ -4,23 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lunch Check</title>
-  <style>
-    .green { color: green; }
-    .red { color: red; }
-    .green-border { border: 2px solid green; }
-    .red-border { border: 2px solid red; }
-  </style>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div ng-controller="LunchCheckController as lunchCtrl">
-    <h1>Lunch Checker</h1>
-    <input type="text" ng-model="lunchCtrl.lunchItems" placeholder="List comma-separated items"
-           ng-class="lunchCtrl.messageClass" />
-    <button ng-click="lunchCtrl.checkLunch()">Check If Too Much</button>
-    <p ng-class="lunchCtrl.messageClass">{{ lunchCtrl.message }}</p>
+  <div class="container mt-5" ng-controller="LunchCheckController as lunchCtrl">
+    <h1 class="text-center mb-4">Lunch Checker</h1>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="List comma-separated items"
+             ng-model="lunchCtrl.lunchItems" ng-class="lunchCtrl.messageClass" />
+    </div>
+    <button class="btn btn-primary btn-block" ng-click="lunchCtrl.checkLunch()">Check If Too Much</button>
+    <p class="mt-3 text-center" ng-class="lunchCtrl.messageClass">{{ lunchCtrl.message }}</p>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
+
