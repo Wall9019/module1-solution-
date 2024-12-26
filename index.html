@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunch Check</title>
+  <style>
+    .green { color: green; }
+    .red { color: red; }
+    .green-border { border: 2px solid green; }
+    .red-border { border: 2px solid red; }
+  </style>
+</head>
+<body>
+  <div ng-controller="LunchCheckController as lunchCtrl">
+    <h1>Lunch Checker</h1>
+    <input type="text" ng-model="lunchCtrl.lunchItems" placeholder="List comma-separated items"
+           ng-class="lunchCtrl.messageClass" />
+    <button ng-click="lunchCtrl.checkLunch()">Check If Too Much</button>
+    <p ng-class="lunchCtrl.messageClass">{{ lunchCtrl.message }}</p>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
